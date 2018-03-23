@@ -4,7 +4,7 @@ before_install:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 install: true
 before_script:
-- export DOCKER_HOST="$HOST_NAME"
+- export DOCKER_HOST=$HOST_NAME
 script:
 - docker build -t 592115007/htmltest .
 - docker push 592115007/htmltest
