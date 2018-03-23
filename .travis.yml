@@ -1,12 +1,16 @@
 language: node_js
+sudo : required
 before_install:
-- openssl aes-256-cbc -k "$super_secret_password" -in se234.pem.enc -out se234.pem
-  -d
-- sudo chmod 400 se234.pem
+- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 install: true
-script: true
+before_script :
+- export DOCKER_HOST="$HOST_NAME"
+script :
+- docker build -t 592115007/htmltest .
+- docker push 592115007/htmltest
 after_success:
-- scp -i "se234.pem" -r html/* ubuntu@54.200.190.48:/var/www/html/
+- docker run -p 8088:80 -d 592115007/htmltest:latest
+service : docker
 addons:
   ssh_known_hosts:
   - 54.200.190.48
