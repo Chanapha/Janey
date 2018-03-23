@@ -11,9 +11,6 @@ script:
 after_success:
 - docker run -p 8088:80 -d 592115007/htmltest:latest
 service: docker
-addons:
-  ssh_known_hosts:
-  - 54.200.190.48
 env:
   global:
   - secure: rFV4cpWMjJYnPboImcDHY+cLIa8Iyw7STjGoPrRgPQISGZOndB8L+F8vLBAmIiVTx88yjIn21QyucbEHfmXqGHuUmnfL2MV2HaVgba1EQLQRnvN+jmAfmw2XJk5BPbqO2Q0o98jWghNlWhdnkD8fP5vqunH2FhC1VHIx+Lc3f4We/F7/fSEsh5ZKnXw6RwmWZ0u3EaqnDw8EgjkJWqCszLBtCBccaZZgjcveXtygBPCJbeMzzPH0UWIGrjZnkG1A/0rwjx5YRqKdT0aBBl2ThpA8cWcSAbjImtD8woQObJCUj9YItTcFPVa3ba+6T/Rfv+Svt8B8cLBjeQcFmBWCOcBEMCNEFor4TkVqf4a+A/ZNFl7wAv59lbV47dO8pFnO/NyNrhNBZ3WtRG4+xpHEJy8CyFK1t2+dviGTNvAqhuYKZ+JD16+zTRA19orU+eImKNYAL9aa6te4O4CyAUzcM8nyR9YXeGLqlBWrhn2OCpL27bOIJKtQruhIvZxCxFKfbvnho9puVsnEVq2nTqDNayUypk+iRqZovul3b5oz8mOox+0+Qm4pcfyhkYOK2cbOdnnQj970uKiIJz1eNb1rXkqgc+Ds0cQzYKuhvCZOMAP+5mYowIM2VVYucVfguy/soU2RTpph256Ac1dff4Dh652cvknmpO+LffSyyA5aW1Y=
